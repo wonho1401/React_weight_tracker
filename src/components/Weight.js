@@ -51,9 +51,7 @@ export default class weight extends Component {
             Check BMI and Save Weight Data
           </button>
         </form>
-        <div className="mt-3 bg-warning">
-          <p>BMI : {bmi}</p>
-        </div>
+        <div className="mt-3 bg-warning">BMI : {bmi}</div>
       </div>
     );
   }
