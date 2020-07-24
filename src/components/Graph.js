@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { Line } from "react-chartjs-2";
 
-//react-charts 이용해서 해봅시다.
 export default class graph extends Component {
   render() {
-    return <div className="">Component from graph</div>;
+    const { weight, bmi } = this.props;
+
+    return (
+      <div className="card card-body text-success">
+        차트가 들어올 곳<Line></Line>
+      </div>
+    );
   }
 }
