@@ -9,7 +9,6 @@ export default class weight extends Component {
       handleSubmit,
       handleWeightChange,
       handleHeightChange,
-      calcBmi,
     } = this.props;
     return (
       <div className="card card-body">
@@ -46,7 +45,7 @@ export default class weight extends Component {
           <br />
           <button
             className="btn btn-block btn-success mt-5 text-capitalize"
-            onClick={calcBmi}
+            onClick={handleSubmit}
           >
             Check BMI and Save Weight Data
           </button>

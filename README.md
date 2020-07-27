@@ -1,6 +1,6 @@
 ## Daily Weight Checker
 
-## fix localStorage
+## fix localStorage -> complete
 
 ## localStorage data -> chart
 
