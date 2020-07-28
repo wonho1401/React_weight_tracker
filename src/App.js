@@ -80,7 +80,10 @@ class App extends React.Component {
             handleSubmit={this.handleSubmit}
             calcBmi={this.calcBmi}
           ></Weight>
-          <Graph weight={this.state.weight} bmi={this.state.bmi}></Graph>
+          <Graph
+            labelData={JSON.parse(localStorage.getItem("List"))}
+            weightData={JSON.parse(localStorage.getItem("List"))}
+          ></Graph>
         </header>
       </div>
     );
