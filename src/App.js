@@ -9,45 +9,23 @@ class App extends React.Component {
   //graphData라는 변수를 두어, 그 안에 weight와 date를 묶어놔야 할 듯.
   state = {
     graphData: [],
-    weight: "",
     date: "",
+    weight: "",
     height: "",
     bmi: "",
   };
 
   handleWeightChange = (e) => {
-    const { weight } = this.state;
-
     this.setState({
       weight: e.target.value, //여기가 문제?
     });
-    localStorage.setItem("List", JSON.stringify(weight));
+    // console.log(this.state.weight);
   };
 
   handleHeightChange = (e) => {
     this.setState({
       height: e.target.value,
     });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    const newData = {
-      weight: this.state.weight,
-      date: this.state.date,
-    };
-
-    this.calcBmi();
-
-    const updatedData = [...this.state.graphData, newData];
-    this.setState({
-      weight: "",
-      height: "",
-      graphData: updatedData,
-    });
-
-    localStorage.setItem("List", JSON.stringify(updatedData));
   };
 
   calcBmi = () => {
@@ -58,14 +36,35 @@ class App extends React.Component {
     });
   };
 
-  componentDidMount() {
-    if (localStorage.getItem("List")) {
-      // Add Data to graph bar
-      // this.setState({
-      //   // weight: JSON.parse(localStorage.getItem("List")),
-      // });
-    }
-  }
+  checkDate = () => {
+    const nowDate = new Date().toLocaleString().split(",")[0];
+    this.setState({
+      date: nowDate,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    this.calcBmi();
+    this.checkDate();
+
+    const newData = {
+      weight: this.state.weight,
+      date: new Date().toLocaleString().split(",")[0],
+    };
+
+    const updatedData = [...this.state.graphData, newData];
+    this.setState({
+      weight: "",
+      height: "",
+      graphData: updatedData,
+    });
+    console.log(this.state);
+    localStorage.setItem("List", JSON.stringify(updatedData));
+  };
+
+  componentDidMount() {}
 
   render() {
     return (
