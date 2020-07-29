@@ -1,43 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
 
-// export default class graph extends Component {
-// constructor(props) {
-//   super(props);
-// }
-// render() {
-//   return (
-//     <div className="card card-body text-success">
-//       차트가 들어올 곳<Line></Line>
-//     </div>
-//   );
-// }
-const Graph = ({ labelData, weightData }) => {
-  const data = (canvas) => {
-    const ctx = canvas.getContext("2d");
-    const gradient = ctx.createLinearGradient(63, 81, 181, 700);
-    gradient.addColorStop(0, "#929dd9");
-    gradient.addColorStop(1, "#172b4d");
+function Graph() {
+  let weightData = JSON.parse(localStorage.getItem("List"));
 
-    return {
-      labels: labelData,
-      datasets: [
-        {
-          label: "Weight",
-          data: weightData,
-          backgroundColor: gradient,
-          borderColor: "#3F51B5",
-          pointRadius: 6,
-          pointHoverRadius: 8,
-          pointHoverBorderColor: "white",
-          pointHoverBorderWidth: 2,
-        },
-      ],
-    };
+  console.log(weightData);
+  const data = {
+    labels: [
+      "2020.07.27",
+      "2020.07.28",
+      "2020.07.29",
+      "2020.07.30",
+      "2020.07.31",
+    ], //날짜 들어가야함
+    datasets: [
+      {
+        label: "Weight",
+        borderColor: "White",
+        data: ["82", "80", "83", "84", "81"], //몸무게 들어가야함.
+        pointHoverBorderColor: "white",
+      },
+    ],
   };
 
   const options = {
-    responsive: true,
+    title: {
+      display: true,
+      text: "Daily Weight Tracker",
+      fontColor: "White",
+    },
     scales: {
       xAxes: [
         {
@@ -53,7 +44,6 @@ const Graph = ({ labelData, weightData }) => {
           },
           ticks: {
             fontColor: "white",
-            fontSize: 16,
           },
         },
       ],
@@ -71,24 +61,15 @@ const Graph = ({ labelData, weightData }) => {
           },
           ticks: {
             fontColor: "white",
-            fontSize: 16,
-            beginAtZero: true,
+            min: 75,
+            max: 85,
+            stepSize: 1,
           },
         },
       ],
     },
-    tooltips: {
-      titleFontSize: 13,
-      bodyFontSize: 13,
-    },
   };
-
-  return (
-    <>
-      <Line data={data} options={options} />
-    </>
-  );
-};
+  return <Line data={data} options={options} />;
+}
 
 export default Graph;
-// }

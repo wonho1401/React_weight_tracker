@@ -12,7 +12,7 @@ export default class weight extends Component {
     } = this.props;
     return (
       <div className="card card-body">
-        <form className="was-validated" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <div className="input-group-prepend">
               <span className="input-group-text bg-success text-white">
