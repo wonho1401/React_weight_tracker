@@ -11,7 +11,7 @@ export default class weight extends Component {
       handleHeightChange,
     } = this.props;
     return (
-      <div className="card card-body">
+      <div className="card bg-dark card-body ">
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <div className="input-group-prepend">
