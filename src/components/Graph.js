@@ -3,21 +3,21 @@ import { Line } from "react-chartjs-2";
 
 function Graph() {
   let weightData = JSON.parse(localStorage.getItem("List"));
-
   console.log(weightData);
+
   const data = {
     labels: [
-      "2020.07.27",
-      "2020.07.28",
+      "2020.07.27 오전 8:56:53",
+      "2020.07.28 오전 9:00:00",
       "2020.07.29",
       "2020.07.30",
       "2020.07.31",
-    ], //날짜 들어가야함
+    ], //날짜 들어가야함 -> submit 할 때 state로 저장해서 가져오기?
     datasets: [
       {
         label: "Weight",
         borderColor: "White",
-        data: ["82", "80", "83", "84", "81"], //몸무게 들어가야함.
+        data: weightData, //ok
         pointHoverBorderColor: "white",
       },
     ],

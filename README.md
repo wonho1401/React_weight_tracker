@@ -1,9 +1,11 @@
 ## Daily Weight Checker
 
-## fix localStorage -> complete
+fix localStorage -> ok.
 
-## localStorage data -> chart (JSON,,,)
+store Date information -> without localStorage
 
-## set options in chart -> ongoing
+localStorage data -> chart (JSON,,,)
 
-## improve interface
+set options in chart -> ongoing
+
+improve interface

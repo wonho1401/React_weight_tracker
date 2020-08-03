@@ -49,11 +49,7 @@ class App extends React.Component {
     this.calcBmi();
     this.checkDate();
 
-    const newData = {
-      weight: this.state.weight,
-      date: new Date().toLocaleString().split(",")[0],
-    };
-
+    const newData = this.state.weight;
     const updatedData = [...this.state.graphData, newData];
     this.setState({
       weight: "",
