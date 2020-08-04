@@ -5,6 +5,8 @@ import Graph from "./components/Graph";
 import Weight from "./components/Weight";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// let dateArr = [];
+
 class App extends React.Component {
   //graphData라는 변수를 두어, 그 안에 weight와 date를 묶어놔야 할 듯.
   state = {
@@ -14,7 +16,6 @@ class App extends React.Component {
     height: "",
     bmi: "",
   };
-
   handleWeightChange = (e) => {
     this.setState({
       weight: e.target.value, //여기가 문제?
@@ -58,6 +59,8 @@ class App extends React.Component {
     });
     console.log(this.state);
     localStorage.setItem("List", JSON.stringify(updatedData));
+    // let newDateArr = [dateArr, this.state.date];
+    // console.log(newDateArr);
   };
 
   componentDidMount() {}

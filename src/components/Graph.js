@@ -11,7 +11,7 @@ function Graph() {
       "2020.07.28 오전 9:00:00",
       "2020.07.29",
       "2020.07.30",
-      "2020.07.31",
+      "2020.07.31 오전 11:36:32",
     ], //날짜 들어가야함 -> submit 할 때 state로 저장해서 가져오기?
     datasets: [
       {
@@ -61,7 +61,7 @@ function Graph() {
           },
           ticks: {
             fontColor: "white",
-            min: 75,
+            min: 70,
             max: 85,
             stepSize: 1,
           },
