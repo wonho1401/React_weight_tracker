@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // let dateArr = [];
 
 class App extends React.Component {
-  //graphData라는 변수를 두어, 그 안에 weight와 date를 묶어놔야 할 듯.
+  // graphData라는 변수를 두어, 그 안에 weight와 date를 묶어놔야 할 듯.
   state = {
     graphData: [],
     date: "",

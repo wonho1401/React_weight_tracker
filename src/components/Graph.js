@@ -6,13 +6,7 @@ function Graph() {
   console.log(weightData);
 
   const data = {
-    labels: [
-      "2020.07.27 오전 8:56:53",
-      "2020.07.28 오전 9:00:00",
-      "2020.07.29",
-      "2020.07.30",
-      "2020.07.31 오전 11:36:32",
-    ], //날짜 들어가야함 -> submit 할 때 state로 저장해서 가져오기?
+    labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"], //날짜 들어가야함 -> submit 할 때 state로 저장해서 가져오기?
     datasets: [
       {
         label: "Weight",
